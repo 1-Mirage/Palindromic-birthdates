@@ -183,17 +183,21 @@ function reverseString(str) {
   var bdayInput = document.querySelector('#bday-input');
   var showBtn = document.querySelector('#show-btn');
   var resultDiv = document.querySelector('#result');
+
   
+
   function clickHandler(e) {
+  
     var bdayString = bdayInput.value;
   
-    if (bdayString !== '') {
+    if (bdayString !== '') 
+    {
       var date = bdayString.split('-');
       var yyyy = date[0];
       var mm = date[1];
       var dd = date[2];
   
-      var date = {
+       date = {
         day: Number(dd),
         month: Number(mm),
         year: Number(yyyy)
@@ -201,7 +205,7 @@ function reverseString(str) {
   
       var dateStr = getDateAsString(date);
       var list = checkPalindromeForAllDateFormats(dateStr);
-      var isPalindrome = false;
+       isPalindrome = false;
   
       for (let i = 0; i < list.length; i++) {
         if (list[i]) {
@@ -209,28 +213,38 @@ function reverseString(str) {
           break;
         }
       }
-  
-      if (!isPalindrome) {
-        const [ctr1, nextDate] = getNextPalindromeDate(date);
-        const [ctr2, prevDate] = getPreviousPalindromeDate(date);
-  
-        if (ctr1 > ctr2) {
-          if(ctr2>=1&&ctr2<=9)
-          resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} day.`;
-          else
-          resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} days.`;
-        } else {
-          if(ctr1>=1&&ctr1<=9)
-          resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} day.`;
-          else
-          resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.`;
-        }
-  
+      resultDiv.innerText = 'Proccessing...';
+      console.log(resultDiv.innerText);
+      function result()
+    {
+    if (!isPalindrome) {
+      console.log(11);
+      const [ctr1, nextDate] = getNextPalindromeDate(date);
+      const [ctr2, prevDate] = getPreviousPalindromeDate(date);
+
+      if (ctr1 > ctr2) {
+        if(ctr2>=1&&ctr2<=9)
+        resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} day.`;
+        else
+        resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} days.`;
       } else {
-        resultDiv.innerText = 'Yay! Your birthday is palindrome!';
+        if(ctr1>=1&&ctr1<=9)
+        resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} day.`;
+        else
+        resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.`;
       }
+
+    }
+     else 
+     {
+      resultDiv.innerText = 'Yay! Your birthday is palindrome!';
     }
   }
+      setTimeout(result,1000);
+      
+    }
+  }
+
   
   showBtn.addEventListener('click', clickHandler);
   
