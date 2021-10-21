@@ -215,8 +215,14 @@ function reverseString(str) {
         const [ctr2, prevDate] = getPreviousPalindromeDate(date);
   
         if (ctr1 > ctr2) {
+          if(ctr2>=1&&ctr2<=9)
+          resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} day.`;
+          else
           resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} days.`;
         } else {
+          if(ctr1>=1&&ctr1<=9)
+          resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} day.`;
+          else
           resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.`;
         }
   
