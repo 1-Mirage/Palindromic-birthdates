@@ -1,14 +1,10 @@
 
 body {
- background-image:url("balloon.jpg");
+   background-image:url("balloon.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
-    height: 100vh;
-    
     color: red;
+     overflow: hidden;/* To hide the scrollbar*/
   }
   
   main 
