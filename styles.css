@@ -1,27 +1,30 @@
 
 body {
+ background-image:url("balloon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
     height: 100vh;
-    background-color: blue;
-    color: white;
+    
+    color: red;
   }
   
-  main {
-    background-image:url("balloon.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid white;
+  main 
+  {
     text-align: center;
     height: 100%;
   }
-  .main-content{
+  .main-content
+  {
     padding-top: 15%;
+    padding-right: 5%;
     height:100%;
     width:100%;
   }
-  #bday-input{
+  #bday-input
+  {
     height:3%;
     width:10%;
     border-radius: 0.5%;;
@@ -30,6 +33,7 @@ body {
   {
     height:3%;
     width:4%;
+    border-radius: 10px;
   }
   
   
